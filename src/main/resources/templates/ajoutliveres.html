@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="templ" lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Ajouter un Livre</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input, select {
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="center-horizontally" layout:fragment="ikram" >
+    <h1>Ajouter un Livre</h1>
+    <form action="ajouterLivre" method="post">
+        <label for="titre">Titre :</label>
+        <input type="text" id="titre" name="titre" required>
+
+        <label for="auteur">Auteur :</label>
+        <input type="text" id="auteur" name="auteur" required>
+
+        <label for="genre">Genre :</label>
+        <input type="text" id="genre" name="genre" required>
+
+        <label for="datePublication">Date de Publication :</label>
+        <input type="date" id="datePublication" name="datePublication" required>
+
+        <label for="disponibilite">Disponibilité :</label>
+        <select id="disponibilite" name="disponibilite" required>
+            <option value="true">Disponible</option>
+            <option value="false">Emprunté</option>
+        </select>
+
+        <button type="submit">Ajouter</button>
+    </form>
+</div>
+</body>
+</html>
